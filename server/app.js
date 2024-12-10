@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 
 const connectDB = require("./utils/db");
+<<<<<<< HEAD
 const http = require("http");
 const socketIo = require("socket.io");
 
@@ -13,6 +14,9 @@ const app = express();
 
 const server = http.createServer(app);
 const io = socketIo(server);
+=======
+const routes = require("./Routes/route");
+>>>>>>> 367bc9658c7e9e76bc99ae1759cdb48746a6837a
 
 const corsOptions = {
   origin: "http://localhost:5173",
@@ -30,6 +34,8 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+
+app.use("/api/v1/auth", routes);
 
 connectDB().then(() => {
   const PORT = process.env.PORT || 3000;
