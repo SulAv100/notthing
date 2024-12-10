@@ -1,0 +1,68 @@
+.login-container {
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.right-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.right-container h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+.login-form input {
+  padding: 10px;
+  width: 300px;
+  outline: none;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  background-color: green;
+  color: white;
+  box-shadow: 0px 0px 10px 10px rgba(4, 252, 83, 0.3);
+}
+.left-container h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-button {
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.sign-button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background-color: rgb(141, 141, 218);
+  outline: none;
+  cursor: pointer;
+  
+}
