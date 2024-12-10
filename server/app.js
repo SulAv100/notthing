@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const connectDB = require("./utils/db");
 const http = require("http");
 const socketIo = require("socket.io");
-// const routes = require("./Routes/route");
+const routes = require("./Routes/route");
 
 const app = express();
 
