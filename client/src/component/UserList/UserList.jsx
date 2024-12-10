@@ -1,8 +1,20 @@
 import React, { useEffect, useState } from "react";
-import './UserList.css'
+import "./UserList.css";
+import { io } from "socket.io-client";
 
 function UserList() {
   const [userList, setUserList] = useState([]);
+  const [socket, setSocket] = useState();
+
+  useEffect(() => {
+    const socketInstance = io("http://localhost:3000",{
+        transports:['websocket']
+    });
+    setSocket(socketInstance);
+
+
+  }, []);
+
   const getUserList = async () => {
     try {
       const response = await fetch("http://localhost:3000/api/v1/user", {
