@@ -5,6 +5,8 @@ import { io } from "socket.io-client";
 function UserList() {
   const [userList, setUserList] = useState([]);
   const [socket, setSocket] = useState();
+  const userId = 123;
+  const userName = "K xa";
 
   useEffect(() => {
     const socketInstance = io("http://localhost:3000", {
