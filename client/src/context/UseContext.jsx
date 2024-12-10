@@ -30,6 +30,29 @@ export const AuthProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+  const validateUser = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:3000/api/v1/auth/verifyUser",
+        {
+          method: "GEt",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
+      const data = await response.json();
+      if (!response.ok) {
+        return;
+      }
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <AuthContext.Provider value={{ userData }}>{children}</AuthContext.Provider>
   );

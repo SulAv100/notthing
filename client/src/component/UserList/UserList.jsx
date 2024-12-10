@@ -7,12 +7,16 @@ function UserList() {
   const [socket, setSocket] = useState();
 
   useEffect(() => {
-    const socketInstance = io("http://localhost:3000",{
-        transports:['websocket']
+    const socketInstance = io("http://localhost:3000", {
+      transports: ["websocket"],
     });
     setSocket(socketInstance);
 
+    socketInstance.emit("register", { userId, userName });
 
+    return () => {
+      socketInstance.disconnect();
+    };
   }, []);
 
   const getUserList = async () => {
