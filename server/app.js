@@ -5,6 +5,8 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 
 const connectDB = require("./utils/db");
+const routes = require("./Routes/route");
+
 const corsOptions = {
   origin: "*",
   methods: "GET,HHEAD,PUT,PATCH,POST",
@@ -19,6 +21,8 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors(corsOptions));
+
+app.use("/api/v1/auth", routes);
 
 connectDB().then(() => {
   const PORT = process.env.PORT || 3000;
