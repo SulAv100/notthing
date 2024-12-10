@@ -1,4 +1,4 @@
-const express = require("express");
+// const express = require("express");
 
 const router = express.Router();
 
@@ -8,4 +8,4 @@ router.post("/login", Controllers.postLogin);
 router.post("/signup", Controllers.postSignup);
 router.get("/getVerify", Controllers.getVerify);
 
-module.exports = router;
+// module.exports = router;

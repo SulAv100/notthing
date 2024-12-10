@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const connectDB = require("./utils/db");
 const http = require("http");
 const socketIo = require("socket.io");
+// const routes = require("./Routes/route");
 
 const app = express();
 
@@ -41,4 +42,17 @@ const userSockets = {};
 
 io.on("connection", (socket) => {
   console.log("User connected with id", socket.id);
+  console.log("User connected with id", socket.id);
+
+  socket.on("register", ({ userId, userName }) => {
+    userSockets[userId] = { socketId: socket.id, userName };
+    console.log(
+      `${userName} with id ${userId} wants to register into the socket`
+    );
+    console.log(userSockets);
+  });
+
+  socket.on("disconnect", (socket) => {
+    console.log(`User with id ${socket.id} has disconnected`);
+  });
 });
